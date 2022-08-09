@@ -9,8 +9,9 @@ function App() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
+    //https://boardgamegeek.com/wiki/page/BGG_XML_API2#
     axios.get(
-      "https://boardgamegeek.com/xmlapi2/hot?type=boardgame",
+      "https://boardgamegeek.com/xmlapi2/hot?type=boardgame", 
       { "Content-Type": "application/xml; charset=utf-8" }
     ).then((response) => {
       const resData = response.data;
