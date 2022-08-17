@@ -36,13 +36,23 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Board Game Geek's "The Hotness":</h1>
+      <Typography variant='h1'>
+        Board Game Geek's "The Hotness":
+      </Typography>
+
       {posts.map((post) => {
         return (
-          <Card>
-            <div key={post._id}>
-              <h2>#{post._rank} {post.name._value}</h2>
-            </div>
+          <Card sx={{
+            margin: 2,
+            boxShadow: 3
+          }}>
+            <CardContent>
+              <div key={post._id}>
+                <Typography variant='h2'>
+                  #{post._rank} {post.name._value}
+                </Typography>
+              </div>
+            </CardContent>
           </Card>
         );
       })}
