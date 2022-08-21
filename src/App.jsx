@@ -51,7 +51,7 @@ const App = () => {
               boxShadow: 3,
             }}
               direction='row'>
-              <Grid container direction='row' wrap='nowrap'>
+              <Grid container alignItems='center' direction='row' wrap='nowrap'>
                 <Grid item>
                   <CardMedia
                     component='img'
