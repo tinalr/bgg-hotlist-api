@@ -10,7 +10,8 @@ import './App.css'
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import X2JS from 'x2js';
-import { maxWidth } from '@mui/system';
+import { Container, maxWidth } from '@mui/system';
+import { Grid } from '@mui/material';
 
 
 // https://boardgamegeek.com/wiki/page/BGG_XML_API2#
@@ -38,32 +39,40 @@ const App = () => {
 
   return (
     <div className="App">
-      <Typography variant='h1'>
-        Board Game Geek's "The Hotness":
-      </Typography>
+      <Container maxWidth='sm'>
+        <Typography variant='h2'>
+          Board Game Geek's "The Hotness":
+        </Typography>
 
-      {posts.map((post) => {
-        return (
-          <Card sx={{
-            margin: 2,
-            boxShadow: 3,
-            maxWidth: 500
-          }}>
-            <CardMedia
-              component='img'
-              image={post.thumbnail._value}
-              sx={{ width: 200 }}
-            />
-            <CardContent>
-              <div key={post._id}>
-                <Typography variant='h2'>
-                  #{post._rank} {post.name._value}
-                </Typography>
-              </div>
-            </CardContent>
-          </Card>
-        );
-      })}
+        {posts.map((post) => {
+          return (
+            <Card sx={{
+              margin: 2,
+              boxShadow: 3,
+            }}
+              direction='row'>
+              <Grid container direction='row' wrap='nowrap'>
+                <Grid item>
+                  <CardMedia
+                    component='img'
+                    image={post.thumbnail._value}
+                    sx={{ width: 200 }}
+                  />
+                </Grid>
+                <Grid item>
+                  <CardContent>
+                    <div key={post._id}>
+                      <Typography variant='h3'>
+                        #{post._rank} {post.name._value}
+                      </Typography>
+                    </div>
+                  </CardContent>
+                </Grid>
+              </Grid>
+            </Card>
+          );
+        })}
+      </Container>
     </div>
   )
 }
