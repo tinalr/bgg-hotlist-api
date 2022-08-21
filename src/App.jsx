@@ -10,6 +10,7 @@ import './App.css'
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import X2JS from 'x2js';
+import { maxWidth } from '@mui/system';
 
 
 // https://boardgamegeek.com/wiki/page/BGG_XML_API2#
@@ -45,12 +46,13 @@ const App = () => {
         return (
           <Card sx={{
             margin: 2,
-            boxShadow: 3
+            boxShadow: 3,
+            maxWidth: 500
           }}>
             <CardMedia
               component='img'
               image={post.thumbnail._value}
-              sx={{ width: 100 }}
+              sx={{ width: 200 }}
             />
             <CardContent>
               <div key={post._id}>
