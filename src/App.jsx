@@ -54,13 +54,11 @@ const App = () => {
               direction='row'>
               <Grid container alignItems='center' direction='row' wrap='nowrap'>
                 <Grid item>
-
                   <CardMedia
                     component='img'
                     image={post.thumbnail._value}
                     sx={{ width: 200 }}
                   />
-
                 </Grid>
                 <Grid item>
                   <CardContent>
