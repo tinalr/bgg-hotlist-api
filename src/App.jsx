@@ -12,12 +12,6 @@ import { useState, useEffect } from 'react';
 import X2JS from 'x2js';
 import { Container, maxWidth } from '@mui/system';
 import { Grid } from '@mui/material';
-import { AspectRatio } from '@mui/joy';
-
-
-// https://boardgamegeek.com/wiki/page/BGG_XML_API2#
-// Need to find a way to parse XML data to JSON ???
-// Have tried npm packages: xml2js, xml-to-jason, react-xml-parser
 
 const App = () => {
   const [posts, setPosts] = useState([]);
@@ -54,11 +48,13 @@ const App = () => {
               direction='row'>
               <Grid container alignItems='center' direction='row' wrap='nowrap'>
                 <Grid item>
+
                   <CardMedia
                     component='img'
                     image={post.thumbnail._value}
                     sx={{ width: 200 }}
                   />
+
                 </Grid>
                 <Grid item>
                   <CardContent>
