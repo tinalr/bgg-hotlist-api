@@ -12,6 +12,7 @@ import { useState, useEffect } from 'react';
 import X2JS from 'x2js';
 import { Container, maxWidth } from '@mui/system';
 import { Grid } from '@mui/material';
+import { AspectRatio } from '@mui/joy';
 
 
 // https://boardgamegeek.com/wiki/page/BGG_XML_API2#
@@ -53,15 +54,17 @@ const App = () => {
               direction='row'>
               <Grid container alignItems='center' direction='row' wrap='nowrap'>
                 <Grid item>
+
                   <CardMedia
                     component='img'
                     image={post.thumbnail._value}
                     sx={{ width: 200 }}
                   />
+
                 </Grid>
                 <Grid item>
                   <CardContent>
-                    <div key={post._id}>
+                    <div key={post._rank}>
                       <Typography variant='h3'>
                         #{post._rank} {post.name._value}
                       </Typography>
