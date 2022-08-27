@@ -58,9 +58,9 @@ const App = () => {
                 </Grid>
                 <Grid item>
                   <CardContent>
-                    <div key={post._rank}>
+                    <div key={post._id}>
                       <Typography variant='h3'>
-                        #{post._id} {post.name._value}
+                        #{post._rank} {post.name._value}
                       </Typography>
                     </div>
                   </CardContent>
