@@ -46,7 +46,7 @@ const App = () => {
               boxShadow: 3,
             }}
               direction='row'>
-              <Grid container alignItems='center' direction='row' wrap='nowrap'>
+              <Grid container alignItems='center' direction='column' wrap='nowrap'>
                 <Grid item>
 
                   <CardMedia
