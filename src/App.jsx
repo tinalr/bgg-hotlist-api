@@ -45,7 +45,11 @@ const App = () => {
           return (
 
             <div key={post._id}>
-              <img src='{post.thumbnail._value}' />
+
+              <AspectRatio ratio='1/1' sx={{ maxWidth: 200 }}>
+                <img src={post.thumbnail._value} />
+              </AspectRatio>
+
               <h3>#{post._rank} {post.name._value}</h3>
 
             </div>
