@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Card from '@mui/material/Card';
+//import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -12,6 +12,7 @@ import { Container, maxWidth } from '@mui/system';
 import { Grid } from '@mui/material';
 import { CssVarsProvider } from '@mui/joy/styles';
 import AspectRatio from '@mui/joy/AspectRatio';
+import Card from '@mui/joy/Card';
 
 
 const App = () => {
@@ -42,8 +43,9 @@ const App = () => {
 
         {posts.map((post) => {
           return (
+            <Card key={post._id}>
 
-            <div key={post._id}>
+
 
               <AspectRatio ratio='1/1' sx={{ maxWidth: 200 }}>
                 <img src={post.thumbnail._value} />
@@ -51,8 +53,9 @@ const App = () => {
 
               <h3>#{post._rank} {post.name._value}</h3>
 
-            </div>
 
+
+            </Card>
           );
         })}
 
