@@ -1,17 +1,20 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+//import Card from '@mui/material/Card';
+//import CardActions from '@mui/material/CardActions';
+//import CardContent from '@mui/material/CardContent';
+//import CardMedia from '@mui/material/CardMedia';
+//import Typography from '@mui/material/Typography';
 import './App.css'
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import X2JS from 'x2js';
-import { Container, maxWidth } from '@mui/system';
-import { Grid } from '@mui/material';
+//import { Container, maxWidth } from '@mui/system';
+//import { Grid } from '@mui/material';
+import { CssVarsProvider } from '@mui/joy/styles';
+import AspectRatio from '@mui/joy/AspectRatio';
+//import Card from '@mui/joy/Card';
+import { Card, CardOverflow, CardContent, Typography } from '@mui/joy';
+
 
 const App = () => {
   const [posts, setPosts] = useState([]);
@@ -33,44 +36,40 @@ const App = () => {
   }; console.log(posts);
 
   return (
-    <div className="App">
-      <Container maxWidth='sm'>
-        <Typography variant='h2'>
-          Board Game Geek's "The Hotness":
-        </Typography>
+    <CssVarsProvider>
+      <div className="App">
+
+
+        <h1>Board Game Geek's "The Hotness":</h1>
 
         {posts.map((post) => {
           return (
-            <Card sx={{
-              margin: 2,
-              boxShadow: 3,
-            }}
-              direction='row'>
-              <Grid container alignItems='center' direction='row' wrap='nowrap'>
-                <Grid item>
+            <Card
+              key={post._id}
+              sx={{
+                '--Card-padding': '16px'
+              }}
+            >
 
-                  <CardMedia
-                    component='img'
-                    image={post.thumbnail._value}
-                    sx={{ width: 200 }}
-                  />
 
-                </Grid>
-                <Grid item>
-                  <CardContent>
-                    <div key={post._id}>
-                      <Typography variant='h3'>
-                        #{post._rank} {post.name._value}
-                      </Typography>
-                    </div>
-                  </CardContent>
-                </Grid>
-              </Grid>
+              <CardOverflow>
+                <AspectRatio ratio='1/1' sx={{ maxWidth: 100 }}>
+                  <img src={post.thumbnail._value} />
+                </AspectRatio>
+              </CardOverflow>
+
+              <CardContent>
+                <Typography>
+                  #{post._rank} {post.name._value}
+                </Typography>
+              </CardContent>
+
             </Card>
           );
         })}
-      </Container>
-    </div>
+
+      </div>
+    </CssVarsProvider>
   )
 }
 
