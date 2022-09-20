@@ -1,19 +1,10 @@
 import * as React from 'react';
-//import Card from '@mui/material/Card';
-//import CardActions from '@mui/material/CardActions';
-//import CardContent from '@mui/material/CardContent';
-//import CardMedia from '@mui/material/CardMedia';
-//import Typography from '@mui/material/Typography';
 import './App.css'
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import X2JS from 'x2js';
-//import { Container, maxWidth } from '@mui/system';
-//import { Grid } from '@mui/material';
 import { CssVarsProvider } from '@mui/joy/styles';
-import AspectRatio from '@mui/joy/AspectRatio';
-//import Card from '@mui/joy/Card';
-import { Card, CardOverflow, CardContent, Typography } from '@mui/joy';
+import { Card, CardOverflow, CardContent, Typography, AspectRatio } from '@mui/joy';
 
 
 const App = () => {
