@@ -30,7 +30,7 @@ const App = () => {
     <CssVarsProvider>
       <div className="App">
 
-        <h1>Board Game Geek's "The Hotness":</h1>
+        <Typography level='h1'>Board Game Geek's "The Hotness":</Typography>
 
         {posts.map((post) => {
           return (
@@ -39,18 +39,19 @@ const App = () => {
               variant='outlined'
               key={post._id}
               sx={{
-                '--Card-padding': '16px'
+                '--Card-padding': '16px',
+                '--Card-radius': '12px'
               }}
             >
 
               <CardOverflow>
-                <AspectRatio ratio='1/1' sx={{ width: 100 }}>
+                <AspectRatio ratio='1/1' sx={{ width: 150 }}>
                   <img src={post.thumbnail._value} />
                 </AspectRatio>
               </CardOverflow>
 
               <CardContent>
-                <Typography>
+                <Typography level='h2'>
                   #{post._rank} {post.name._value}
                 </Typography>
               </CardContent>
