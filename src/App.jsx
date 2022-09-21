@@ -28,7 +28,9 @@ const App = () => {
 
   return (
     <CssVarsProvider>
-      <div className="App">
+      <div className="App"
+      //style={{ justifyContent: center }}
+      >
 
         <Typography level='h1'>Board Game Geek's "The Hotness":</Typography>
 
@@ -40,7 +42,9 @@ const App = () => {
               key={post._id}
               sx={{
                 '--Card-padding': '16px',
-                '--Card-radius': '12px'
+                '--Card-radius': '12px',
+                margin: '16px',
+                //maxWidth: 500
               }}
             >
 
