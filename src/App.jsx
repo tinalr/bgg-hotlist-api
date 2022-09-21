@@ -30,21 +30,21 @@ const App = () => {
     <CssVarsProvider>
       <div className="App">
 
-
         <h1>Board Game Geek's "The Hotness":</h1>
 
         {posts.map((post) => {
           return (
             <Card
+              row
+              variant='outlined'
               key={post._id}
               sx={{
                 '--Card-padding': '16px'
               }}
             >
 
-
               <CardOverflow>
-                <AspectRatio ratio='1/1' sx={{ maxWidth: 100 }}>
+                <AspectRatio ratio='1/1' sx={{ width: 100 }}>
                   <img src={post.thumbnail._value} />
                 </AspectRatio>
               </CardOverflow>
