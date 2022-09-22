@@ -27,9 +27,15 @@ const App = () => {
   }; console.log(posts);
 
   return (
-    <CssVarsProvider>
+    <CssVarsProvider
+      style={{ backgroundColor: '#8c2531' }}
+    >
       <div className="App"
-      //style={{ justifyContent: center }}
+        style={{
+          backgroundColor: '#8c2531',
+          margin: '-32px',
+          padding: '32px'
+        }}
       >
 
         <Typography level='h1'>Board Game Geek's "The Hotness":</Typography>
