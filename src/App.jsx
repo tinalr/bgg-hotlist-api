@@ -27,9 +27,7 @@ const App = () => {
   }; console.log(posts);
 
   return (
-    <CssVarsProvider
-      style={{ backgroundColor: '#8c2531' }}
-    >
+    <CssVarsProvider>
       <div className="App"
         style={{
           backgroundColor: '#8c2531',
@@ -50,7 +48,6 @@ const App = () => {
                 '--Card-padding': '16px',
                 '--Card-radius': '12px',
                 margin: '16px',
-                //maxWidth: 500
               }}
             >
 
