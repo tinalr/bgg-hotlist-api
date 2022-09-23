@@ -30,13 +30,13 @@ const App = () => {
     <CssVarsProvider>
       <div className="App"
         style={{
-          backgroundColor: '#8c2531',
+          backgroundColor: '',
           margin: '-32px',
           padding: '32px'
         }}
       >
 
-        <Typography level='h1'>Board Game Geek's "The Hotness":</Typography>
+        <Typography level='display1'>Board Game Geek's "The Hotness":</Typography>
 
         {posts.map((post) => {
           return (
@@ -58,7 +58,7 @@ const App = () => {
               </CardOverflow>
 
               <CardContent>
-                <Typography level='h2'>
+                <Typography level='h1'>
                   #{post._rank} {post.name._value}
                 </Typography>
               </CardContent>
