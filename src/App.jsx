@@ -36,7 +36,9 @@ const App = () => {
         }}
       >
 
-        <Typography level='display1'>Board Game Geek's "The Hotness":</Typography>
+        <Typography level='display1' fontSize='lg' fontWeight='lg'>
+          Board Game Geek's "The Hotness":
+        </Typography>
 
         {posts.map((post) => {
           return (
@@ -58,7 +60,7 @@ const App = () => {
               </CardOverflow>
 
               <CardContent>
-                <Typography level='h1'>
+                <Typography level='h1' fontSize='md' fontWeight='lg'>
                   #{post._rank} {post.name._value}
                 </Typography>
               </CardContent>
