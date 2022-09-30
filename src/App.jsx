@@ -30,13 +30,13 @@ const App = () => {
     <CssVarsProvider>
       <div className="App"
         style={{
-          backgroundColor: '',
+          backgroundColor: '#CAE2CD',
           margin: '-32px',
           padding: '32px'
         }}
       >
 
-        <Typography level='display1' fontSize='lg' fontWeight='lg'>
+        <Typography level='display1' fontSize='2em' fontWeight='lg'>
           Board Game Geek's "The Hotness":
         </Typography>
 
