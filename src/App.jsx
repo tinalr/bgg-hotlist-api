@@ -7,8 +7,12 @@ import { CssVarsProvider } from '@mui/joy/styles';
 import { Card, CardOverflow, CardContent, Typography, AspectRatio } from '@mui/joy';
 
 
+
 const App = () => {
   const [posts, setPosts] = useState([]);
+
+  const current = new Date();
+  const date = `${current.getMonth() + 1} / ${current.getDate()} / ${current.getFullYear()}`;
 
   useEffect(() => {
     getResponse();
@@ -24,20 +28,33 @@ const App = () => {
       //console.log(document.items.item)
       setPosts(document.items.item)
     }
-  }; console.log(posts);
+  };
+  console.log(posts);
 
   return (
     <CssVarsProvider>
       <div className="App"
         style={{
-          backgroundColor: '#CAE2CD',
           margin: '-32px',
-          padding: '32px'
+          padding: '32px',
+          width: '100%',
+          fontFamily: 'cursive'
         }}
       >
 
-        <Typography level='display1' fontSize='2em' fontWeight='lg'>
-          Board Game Geek's "The Hotness":
+        <Typography level='display1' fontSize='2rem' fontWeight='lg'
+          style={{
+            color: 'white'
+          }}
+        >
+          Top 50 Trending Board Games
+        </Typography>
+        <Typography level='display2' fontSize='1.5rem' fontWeight='lg'
+          style={{
+            color: 'white'
+          }}
+        >
+          {date}
         </Typography>
 
         {posts.map((post) => {
@@ -47,15 +64,19 @@ const App = () => {
               variant='outlined'
               key={post._id}
               sx={{
-                '--Card-padding': '16px',
+                '--Card-padding': '32px',
                 '--Card-radius': '12px',
-                margin: '16px',
+                margin: '20px auto',
+                width: '75%',
+                maxWidth: '500px',
+                border: 'none',
+                boxShadow: 'none'
               }}
             >
 
               <CardOverflow>
                 <AspectRatio ratio='1/1' sx={{ width: 150 }}>
-                  <img src={post.thumbnail._value} />
+                  <img src={post.thumbnail._value} alt='thumbnail image of game box art' />
                 </AspectRatio>
               </CardOverflow>
 
